@@ -31,7 +31,6 @@ body{
 }
 
 /* Estilo del header */
-
 header{
     background-color: var(--background);
     display: flex;
@@ -79,6 +78,7 @@ nav{
         color: var(--text-secondary);
         transition: color 0.2s;
         font-weight: 500;
+
         &:hover, &:focus {
             color: var(--primary);
             outline: none;
@@ -112,7 +112,7 @@ h1, h2, h3{
 
 
 
-main{
+.empleos{
     padding: 20px;
     background-color: var(--background);
     display: flex;
@@ -128,14 +128,10 @@ main{
     }
 }
 
-section{
-    width: 90%;
-    padding: 20px 10px;
-}
 
 
 
-form{
+.job-search-form{
     width: 100%;   
 }
 
@@ -149,6 +145,8 @@ form{
 
 
 .job-search{
+    width: 90%;
+    padding: 20px 10px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -186,6 +184,11 @@ select{
     border-radius: 8px;
     margin-top: 10px;
     font-size: 1rem;
+}
+
+.job-results{
+    width: 90%;
+    padding: 20px 10px;
 }
 
 .job-results h2{

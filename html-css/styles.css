@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-
-
-
-
-
 :root {
   --primary: #3b4550;
   --primary-dark: #0a3d66;
@@ -19,20 +14,11 @@
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
   --border: rgba(255, 255, 255, 0.1);
-  --card-bg: #1e293b;
+  --card-bg: rgb(30, 41, 59);
   --shadow: rgba(0, 0, 0, 0.3);
-  --input-bg: #1e293b;
+  --input-bg: rgb(24, 33, 45);
   --hsla-example: hsla(210, 100%, 56%, 1);
 }
-
-
-
-
-
-
-
-
-
 
 @font-face {
   font-family: 'Inter Variable';
@@ -43,17 +29,8 @@
   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
-
-
-
-
-
-
-
-
-
 body {
-  font-family: system-ui;
+  font-family: System-UI;
   background-color: var(--background);
   color: var(--text-primary);
   min-height: 100vh;
@@ -62,13 +39,18 @@ body {
   line-height: 1.6;
 }
 
-
 /* Títulos principales */
 h1 {
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.2;
   text-wrap: balance;
+  color: var(--text-primary);
+}
+
+
+h2, h3{
+    color: var(--text-primary);
 }
 
 h1 + p {
@@ -76,6 +58,8 @@ h1 + p {
   margin-bottom: 2rem
 }
 
+
+/* Encabezado con navegador -------- */
 /* Header */
 header{
     background-color: var(--background);
@@ -88,10 +72,14 @@ header{
     font-size: 1.5rem;
     }
 
+    svg{
+        color: var(--primary-light);
+    }
+
     &>div{
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
 
     & img{
@@ -113,6 +101,8 @@ header{
 }
 
 nav{
+    display: flex;
+    gap: 10px;
     a {
         text-decoration: none;
         color: var(--text-secondary);
@@ -125,8 +115,6 @@ nav{
         }
     }
 }
-
-
 
 /* Botones del Header */
 .login {
@@ -141,7 +129,10 @@ nav{
   /* TODO */
 }
 
-/* Hero */
+/* Fin */
+
+
+/* Búsqueda en la pagina principal */
 .index-search {
   height: 500px;
   text-align: center;
@@ -192,8 +183,6 @@ nav{
   } */
 }
 
-
-
 .index-search-form input{
   &[type="text"]{
     flex: 1;
@@ -211,7 +200,6 @@ nav{
   }
   
 }
-
 
 .index-search-form button[type="submit"]{
   padding: 0.75rem 1.5rem;
@@ -234,8 +222,7 @@ nav{
 }
 
 
-
-/* Features Section */
+/*  Sección de caracteristicas de DevJobs */
 .about-devjobs {
   padding-inline: 1rem;
   background-color: var(--background);
@@ -290,7 +277,6 @@ nav{
 }
 
 
-
 .about-devjobs > div > div:first-child > p {
   font-size: 1.125rem;
   color: var(--text-muted);
@@ -305,6 +291,30 @@ nav{
   gap: 16px
 }
 
+.about-devjobs article {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  margin-bottom: 16px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+
+  svg {
+    color: var(--primary-light);
+    background: rgba(0, 153, 255, .3);
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    padding: 16px;
+  }
+
+  p {
+    color: var(--text-muted);
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+}
 /* Feature Cards */
 /* article {
   background-color: var(--card-bg);
@@ -344,30 +354,173 @@ footer {
   }
 }
 
-article {
-  background-color: var(--card-bg);
-  padding: 2rem;
-  margin-bottom: 16px;
-  border-radius: 0.5rem;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
 
-  svg {
-    color: var(--primary-light);
-    background: rgba(0, 153, 255, .3);
-    width: 64px;
-    height: 64px;
-    border-radius: 100%;
-    padding: 16px;
-  }
-
-  p {
-    color: var(--text-muted);
-  }
-
-  h3 {
-    font-weight: 500;
-  }
-}
 
 
 /* EMPLEOS----------- */
+
+.empleos{
+    padding: 20px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+    
+    h1{
+        font-size: 2.25rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-wrap: balance;
+    }
+}
+
+
+
+
+.job-search-form{
+    width: 100%;   
+}
+
+.search-bar svg{
+    color: var(--text-muted);
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px;
+}
+
+
+
+.job-search{
+    width: 90%;
+    padding: 20px 10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    input{
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    }
+
+    h1+p{
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    }
+
+    div:first-child{
+    border: 1px solid var(--border);
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--input-bg);
+    }
+}
+
+
+select{
+    background-color: var(--card-bg);
+    border: none;
+    color: var(--text-secondary);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.job-results{
+    width: 90%;
+    padding: 20px 10px;
+}
+
+.job-results h2{
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.job-results article{
+    border: 1px solid var(--border);
+    padding: 15px;
+    gap: 15px;
+    display: flex;
+    align-items: start;
+
+    button{
+        cursor: pointer;
+        padding: 10px 15px;
+        background-color: var(--primary-light);
+        border: none;
+        border-radius: 5px;
+        color: var(--text-primary);
+        font-weight: bold;
+    }
+
+    p{
+        color: var(--text-secondary);
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    h3{
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+
+    h3+p{
+        font-size: .875rem;
+        opacity: .75;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    &:first-child{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    &:last-child{
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+}
+
+
+
+.job-results .pagination{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    a{
+        padding: 8px 12px;
+        text-decoration: none;
+        background-color: var(--background);
+        border: none;
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            background-color: #fff;
+        }
+
+        &:active {
+            transform: scale(0.90);
+        }
+
+        &.is-active {
+            background-color: var(--primary-light);
+            color: white;
+            pointer-events: none;
+        }   
+    }
+}
