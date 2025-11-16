@@ -115,6 +115,7 @@ h1 + p {
 
 }
 
+
 nav{
   display: flex;
   align-items: center;
@@ -134,34 +135,8 @@ nav{
   
 }
 
-/* las A son propiedades ya modificadas en el media query o de normal*/
-/* .mobile-menu{
-  flex-direction: column;
-  justify-content: start;; 
-  nav{
-    display: flex; 
-    flex-direction: column;
-    a {
-      font-size: 25px;
-      padding: 10px 0;
-      border-top: solid 1px var(--nav-border);
-    }
-    a:first-child { 
-      margin-top: 20px;  
-    }
-    a:last-child {
-      border-bottom: solid 1px var(--nav-border);
-    }
-  }
-  .extra-buttons{
-    flex-direction: column;
-    margin-top: 20px;
-    a{
-      text-align: center;
-      font-size: 20px;
-    }
-  }
-} */
+
+
 
 /* Botones del Header */
 .login {
@@ -186,6 +161,39 @@ nav{
         height: 35px;
         color: var(--text-primary);
     }
+}
+
+/* Clase de estilos con el menú responsive desplegado */
+.mobile-menu{
+  flex-direction: column;
+  &>div{
+    flex-direction: column;
+    text-justify: flex-start;
+  }
+  nav{
+    display: flex; 
+    flex-direction: column;
+    a {
+      font-size: 25px;
+      padding: 10px 0;
+      border-top: solid 1px var(--nav-border);
+    }
+    a:first-child { 
+      margin-top: 20px;  
+    }
+    a:last-child {
+      border-bottom: solid 1px var(--nav-border);
+    }
+  }
+  .extra-buttons{
+    flex-direction: column;
+    margin-top: 20px;
+    a{
+      display: block;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
 }
 
 @media (width <= 770px) {
